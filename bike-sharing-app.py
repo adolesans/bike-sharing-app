@@ -7,7 +7,7 @@ import seaborn as sns
 import streamlit as st
 st.set_page_config(layout="wide")
 
-st.title("🚲 Dashboard Analisis Sewa Sepeda")
+st.title("🚴‍♀️🔍 Dashboard Analisis Sewa Sepeda 📊🚲")
 
 # --- Download dan ekstrak data ---
 url = "https://drive.google.com/uc?export=download&id=1RaBmV6Q6FYWU4HWZs80Suqd7KQC34diQ"
