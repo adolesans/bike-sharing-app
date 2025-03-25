@@ -106,21 +106,28 @@ st.markdown("""
 - Kondisi cuaca yang **baik (cerah)** mendorong peningkatan peminjaman sepeda.
 """)
 
-# Sidebar untuk Kesimpulan Analisis
-st.sidebar.header("💡 Kesimpulan Analisis")
-st.sidebar.markdown("""
-**Pola Penyewaan:**
-- **Hari Kerja Tinggi:** Penggunaan utama untuk transportasi rutin.
-- **Hari Libur Bervariasi:** Penggunaan untuk rekreasi.
+st.sidebar.header("Analisis & Insight")
 
-**Faktor Utama:**
-- **Suhu Nyaman:** Meningkatkan jumlah penyewa.
-- **Cuaca Baik:** Mendorong penyewaan.
-- **Angin Kencang:** Mengurangi penyewaan.
-- **Tren Positif:** Peningkatan penyewa dari waktu ke waktu.
+st.sidebar.subheader("Pola Penyewaan")
+if st.sidebar.checkbox("Tampilkan Insight Pola Penyewaan"):
+    st.sidebar.markdown("""
+    - **Hari Kerja Tinggi:** Menunjukkan penggunaan utama untuk transportasi rutin.
+    - **Hari Libur Bervariasi:** Mengindikasikan penggunaan untuk rekreasi atau aktivitas santai.
+    """)
 
-**Rekomendasi:**
-- **Optimalkan Ketersediaan Hari Kerja.**
-- **Adakan Promosi Hari Libur.**
-- **Adaptasi Layanan dengan Cuaca.**
-""")
+st.sidebar.subheader("Faktor Utama")
+if st.sidebar.checkbox("Tampilkan Insight Faktor Utama"):
+    st.sidebar.markdown("""
+    - **Suhu Nyaman:** Meningkatkan jumlah penyewa.
+    - **Cuaca Baik:** Mendorong penyewaan.
+    - **Angin Kencang:** Mengurangi penyewaan.
+    - **Tren Positif:** Peningkatan penyewa dari waktu ke waktu.
+    """)
+
+st.sidebar.subheader("Rekomendasi Strategis")
+if st.sidebar.checkbox("Tampilkan Rekomendasi"):
+    st.sidebar.markdown("""
+    - **Optimalkan Ketersediaan Hari Kerja.**
+    - **Adakan Promosi Hari Libur.**
+    - **Adaptasi Layanan dengan Cuaca.**
+    """)
