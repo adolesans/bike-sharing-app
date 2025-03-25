@@ -35,6 +35,16 @@ df.rename(columns={
     'registered': 'penyewa_registered', 'cnt': 'jumlah_sewa'
 }, inplace=True)
 
+# --- nilai numerik menjadi nama ---
+musim_map = {1: "Semi", 2: "Panas", 3: "Gugur", 4: "Dingin"}
+bulan_map = {1: "Januari", 2: "Februari", 3: "Maret", 4: "April", 5: "Mei", 6: "Juni",
+             7: "Juli", 8: "Agustus", 9: "September", 10: "Oktober", 11: "November", 12: "Desember"}
+hari_minggu_map = {0: "Minggu", 1: "Senin", 2: "Selasa", 3: "Rabu", 4: "Kamis", 5: "Jumat", 6: "Sabtu"}
+hari_kerja_map = {0: "Bukan Hari Kerja", 1: "Hari Kerja"}
+hari_libur_map = {0: "Bukan Hari Libur", 1: "Hari Libur"}
+kondisi_cuaca_map = {1: "Cerah", 2: "Kabut/Berawan", 3: "Hujan Ringan/Salju Ringan", 4: "Hujan Lebat/Salju Lebat"}
+tahun_map = {0: "2011", 1: "2012"}
+
 # --- Sidebar ---
 st.sidebar.header("Filter")
 tahun = st.sidebar.selectbox("Pilih Hari:", sorted(df['tahun'].unique()))
