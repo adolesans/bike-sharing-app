@@ -71,14 +71,6 @@ filtered_df = df[df['tahun'].isin(tahun_filter) &
                   df['kondisi_cuaca'].isin(kondisi_cuaca_filter) &
                   df['hari_minggu'].isin(hari_minggu_filter)]
 
-# --- Pilihan Visualisasi Interaktif ---
-st.sidebar.header("Pilihan Visualisasi")
-plot_type = st.sidebar.selectbox("Jenis Plot:", ["Bar Chart", "Heatmap Korelasi", "Distribusi", "Box Plot"])
-group_by = st.sidebar.selectbox("Kelompokkan Berdasarkan (untuk Bar Chart/Box Plot):",
-                                ["Hari Kerja", "Hari Libur", "Musim", "Kondisi Cuaca", "Bulan", "Hari Minggu"])
-numeric_column = st.sidebar.selectbox("Kolom Numerik (untuk Distribusi/Box Plot):",
-                                     ["jumlah_sewa", "penyewa_casual", "penyewa_registered", "suhu", "suhu_terasa", "kelembaban", "kecepatan_angin"])
-
 # --- Visualisasi jumlah sewa berdasarkan hari kerja dan hari libur ---
 st.subheader("📈 Rata-rata Jumlah Sewa Berdasarkan Hari Kerja & Hari Libur")
 grouped_data = filtered_df.groupby(['hari_kerja', 'hari_libur'])['jumlah_sewa'].mean().reset_index()
