@@ -19,13 +19,11 @@ Original file is located at
 ## Import Semua Packages/Library yang Digunakan
 """
 
-from google.colab import drive
 import os
 import zipfile
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 import requests 
 
 url = "https://drive.google.com/uc?export=download&id=1RaBmV6Q6FYWU4HWZs80Suqd7KQC34diQ"  
