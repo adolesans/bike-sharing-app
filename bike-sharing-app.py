@@ -98,14 +98,6 @@ ax3.set_xlabel("Jumlah Sewa Sepeda")
 st.pyplot(fig3)
 
 # --- Kesimpulan ---
-st.markdown("""
-### 📌 Kesimpulan:
-- Jumlah penyewa sepeda cenderung **lebih tinggi pada hari kerja**.
-- **Suhu terasa** dan **suhu aktual** merupakan faktor paling berkorelasi positif terhadap jumlah penyewa.
-- Semakin **tinggi kelembaban dan kecepatan angin**, semakin **rendah** jumlah penyewa.
-- Kondisi cuaca yang **baik (cerah)** mendorong peningkatan peminjaman sepeda.
-""")
-
 st.sidebar.header("Filter Kesimpulan")
 kategori_filter = st.sidebar.multiselect(
     "Pilih Kategori Kesimpulan:",
