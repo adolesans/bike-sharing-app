@@ -106,28 +106,46 @@ st.markdown("""
 - Kondisi cuaca yang **baik (cerah)** mendorong peningkatan peminjaman sepeda.
 """)
 
-st.sidebar.header("Analisis & Insight")
+pola_penyewaan_filter = st.sidebar.multiselect(
+    "Pola Penyewaan:",
+    ["Lebih Tinggi di Hari Kerja", "Variasi di Hari Libur"],
+    default=["Lebih Tinggi di Hari Kerja", "Variasi di Hari Libur"],
+)
 
-st.sidebar.subheader("Pola Penyewaan")
-if st.sidebar.checkbox("Tampilkan Insight Pola Penyewaan"):
-    st.sidebar.markdown("""
-    - **Hari Kerja Tinggi:** Menunjukkan penggunaan utama untuk transportasi rutin.
-    - **Hari Libur Bervariasi:** Mengindikasikan penggunaan untuk rekreasi atau aktivitas santai.
-    """)
+faktor_utama_filter = st.sidebar.multiselect(
+    "Faktor Utama:",
+    ["Suhu Nyaman Meningkatkan", "Cuaca Baik Mendorong", "Angin Kencang Mengurangi", "Tren Positif"],
+    default=["Suhu Nyaman Meningkatkan", "Cuaca Baik Mendorong", "Angin Kencang Mengurangi", "Tren Positif"],
+)
 
-st.sidebar.subheader("Faktor Utama")
-if st.sidebar.checkbox("Tampilkan Insight Faktor Utama"):
-    st.sidebar.markdown("""
-    - **Suhu Nyaman:** Meningkatkan jumlah penyewa.
-    - **Cuaca Baik:** Mendorong penyewaan.
-    - **Angin Kencang:** Mengurangi penyewaan.
-    - **Tren Positif:** Peningkatan penyewa dari waktu ke waktu.
-    """)
+rekomendasi_filter = st.sidebar.multiselect(
+    "Rekomendasi:",
+    ["Optimalkan Ketersediaan Hari Kerja", "Adakan Promosi Hari Libur", "Adaptasi Layanan dengan Cuaca"],
+    default=["Optimalkan Ketersediaan Hari Kerja", "Adakan Promosi Hari Libur", "Adaptasi Layanan dengan Cuaca"],
+)
 
-st.sidebar.subheader("Rekomendasi Strategis")
-if st.sidebar.checkbox("Tampilkan Rekomendasi"):
-    st.sidebar.markdown("""
-    - **Optimalkan Ketersediaan Hari Kerja.**
-    - **Adakan Promosi Hari Libur.**
-    - **Adaptasi Layanan dengan Cuaca.**
-    """)
+st.subheader("Kesimpulan Analisis Penyewaan Sepeda")
+
+st.markdown("### Pola Penyewaan:")
+if "Lebih Tinggi di Hari Kerja" in pola_penyewaan_filter:
+    st.markdown("- Penyewaan sepeda lebih tinggi di hari kerja, menunjukkan penggunaan untuk transportasi rutin.")
+if "Variasi di Hari Libur" in pola_penyewaan_filter:
+    st.markdown("- Di hari libur, penyewaan lebih bervariasi, menunjukkan penggunaan untuk rekreasi atau aktivitas santai.")
+
+st.markdown("\n### Faktor Utama:")
+if "Suhu Nyaman Meningkatkan" in faktor_utama_filter:
+    st.markdown("- Suhu terasa yang nyaman meningkatkan jumlah penyewa.")
+if "Cuaca Baik Mendorong" in faktor_utama_filter:
+    st.markdown("- Cuaca yang baik mendorong lebih banyak penyewaan.")
+if "Angin Kencang Mengurangi" in faktor_utama_filter:
+    st.markdown("- Kecepatan angin tinggi mengurangi minat penyewaan.")
+if "Tren Positif" in faktor_utama_filter:
+    st.markdown("- Tren waktu menunjukkan jumlah penyewa meningkat seiring waktu, memberi peluang pertumbuhan bisnis.")
+
+st.markdown("\n### Rekomendasi Strategis:")
+if "Optimalkan Ketersediaan Hari Kerja" in rekomendasi_filter:
+    st.markdown("- Meningkatkan ketersediaan sepeda di jam sibuk hari kerja.")
+if "Adakan Promosi Hari Libur" in rekomendasi_filter:
+    st.markdown("- Menawarkan promosi khusus di hari libur untuk mendorong penyewaan.")
+if "Adaptasi Layanan dengan Cuaca" in rekomendasi_filter:
+    st.markdown("- Menyesuaikan layanan berdasarkan prakiraan cuaca untuk mengoptimalkan operasional dan kepuasan pelanggan.")
