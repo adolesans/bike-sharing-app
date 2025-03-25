@@ -18,6 +18,12 @@ Original file is located at
 
 ## Import Semua Packages/Library yang Digunakan
 """
+import os
+import zipfile
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import requests
 
 github_raw_url = "https://github.com/adolesans/bike-sharing-app/blob/main/combined-dataset.csv"  
 csv_filename = "dataset.csv"
