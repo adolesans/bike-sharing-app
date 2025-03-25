@@ -1,6 +1,5 @@
-altair==5.5.0
-pandas==2.2.3
-matplotlib==3.10.1
-requests==2.32.3
-streamlit==1.43.2
-seaborn==0.13.2
+streamlit
+pandas
+seaborn
+matplotlib
+requests
