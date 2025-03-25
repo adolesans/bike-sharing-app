@@ -26,10 +26,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-!pip install requests # Install the requests library
+import requests 
 
-import requests # Import the necessary library
-# Replace with the direct download link
 url = "https://drive.google.com/uc?export=download&id=1RaBmV6Q6FYWU4HWZs80Suqd7KQC34diQ"  
 zip_path = "Bike-sharing-dataset.zip"
 
