@@ -113,22 +113,22 @@ kategori_filter = st.sidebar.multiselect(
     default=["Pola Penyewaan", "Faktor Penyebab", "Rekomendasi Bisnis"],
 )
 
-st.subheader("Kesimpulan Analisis Penyewaan Sepeda")
+st.subheader("📌Kesimpulan Analisis Penyewaan Sepeda🚴‍♂️")
 
 if "Pola Penyewaan" in kategori_filter:
-    st.markdown("### Pola Penyewaan:")
+    st.markdown("### 📊Pola Penyewaan:")
     st.markdown("- Penyewaan sepeda lebih tinggi di hari kerja, menunjukkan penggunaan untuk transportasi rutin.")
     st.markdown("- Di hari libur, penyewaan lebih bervariasi, menunjukkan penggunaan untuk rekreasi atau aktivitas santai.")
 
 if "Faktor Penyebab" in kategori_filter:
-    st.markdown("\n### Faktor yang Mempengaruhi Penyewaan:")
+    st.markdown("\n### 🌡️Faktor yang Mempengaruhi Penyewaan:")
     st.markdown("- Suhu terasa yang nyaman meningkatkan jumlah penyewa.")
     st.markdown("- Cuaca yang baik mendorong lebih banyak penyewaan.")
     st.markdown("- Kecepatan angin tinggi mengurangi minat penyewaan.")
     st.markdown("- Tren waktu menunjukkan jumlah penyewa meningkat seiring waktu, memberi peluang pertumbuhan bisnis.")
 
 if "Rekomendasi Bisnis" in kategori_filter:
-    st.markdown("\n### Rekomendasi Strategis:")
+    st.markdown("\n### 🎯Rekomendasi Strategis:")
     st.markdown("- Meningkatkan ketersediaan sepeda di jam sibuk hari kerja.")
     st.markdown("- Menawarkan promosi khusus di hari libur untuk mendorong penyewaan.")
     st.markdown("- Menyesuaikan layanan berdasarkan prakiraan cuaca untuk mengoptimalkan operasional dan kepuasan pelanggan.")
