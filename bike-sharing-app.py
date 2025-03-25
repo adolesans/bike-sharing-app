@@ -37,7 +37,7 @@ df.rename(columns={
 
 # --- Sidebar ---
 st.sidebar.header("Filter")
-tahun = st.sidebar.selectbox("Pilih Tahun:", sorted(df['tahun'].unique()))
+tahun = st.sidebar.selectbox("Pilih Hari:", sorted(df['tahun'].unique()))
 
 filtered_df = df[df['tahun'] == tahun]
 
