@@ -51,8 +51,7 @@ tahun = st.sidebar.selectbox("Pilih Hari:", sorted(df['tahun'].unique()))
 
 filtered_df = df[df['tahun'] == tahun]
 
-# --- Sidebar Filter Interaktif ---
-# --- Sidebar Filter Interaktif dengan Nama ---
+# --- Sidebar Filter ---
 st.sidebar.header("Filter Data")
 tahun_filter = st.sidebar.multiselect("Pilih Tahun:", sorted(df['tahun'].unique()), default=sorted(df['tahun'].unique()), format_func=lambda x: tahun_map.get(x, str(x)))
 bulan_filter = st.sidebar.multiselect("Pilih Bulan:", sorted(df['bulan'].unique()), default=sorted(df['bulan'].unique()), format_func=lambda x: bulan_map.get(x, str(x)))
@@ -105,4 +104,23 @@ st.markdown("""
 - **Suhu terasa** dan **suhu aktual** merupakan faktor paling berkorelasi positif terhadap jumlah penyewa.
 - Semakin **tinggi kelembaban dan kecepatan angin**, semakin **rendah** jumlah penyewa.
 - Kondisi cuaca yang **baik (cerah)** mendorong peningkatan peminjaman sepeda.
+""")
+
+# Sidebar untuk Kesimpulan Analisis
+st.sidebar.header("💡 Kesimpulan Analisis")
+st.sidebar.markdown("""
+**Pola Penyewaan:**
+- **Hari Kerja Tinggi:** Penggunaan utama untuk transportasi rutin.
+- **Hari Libur Bervariasi:** Penggunaan untuk rekreasi.
+
+**Faktor Utama:**
+- **Suhu Nyaman:** Meningkatkan jumlah penyewa.
+- **Cuaca Baik:** Mendorong penyewaan.
+- **Angin Kencang:** Mengurangi penyewaan.
+- **Tren Positif:** Peningkatan penyewa dari waktu ke waktu.
+
+**Rekomendasi:**
+- **Optimalkan Ketersediaan Hari Kerja.**
+- **Adakan Promosi Hari Libur.**
+- **Adaptasi Layanan dengan Cuaca.**
 """)
