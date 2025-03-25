@@ -1,3 +1,10 @@
+import os
+import zipfile
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import streamlit as st
 st.set_page_config(layout="wide")
 
 st.title("🚲 Dashboard Analisis Sewa Sepeda")
