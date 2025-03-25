@@ -52,14 +52,15 @@ tahun = st.sidebar.selectbox("Pilih Hari:", sorted(df['tahun'].unique()))
 filtered_df = df[df['tahun'] == tahun]
 
 # --- Sidebar Filter Interaktif ---
+# --- Sidebar Filter Interaktif dengan Nama ---
 st.sidebar.header("Filter Data")
-tahun_filter = st.sidebar.multiselect("Pilih Tahun:", sorted(df['tahun'].unique()), default=sorted(df['tahun'].unique()))
-bulan_filter = st.sidebar.multiselect("Pilih Bulan:", sorted(df['bulan'].unique()), default=sorted(df['bulan'].unique()))
-musim_filter = st.sidebar.multiselect("Pilih Musim:", sorted(df['musim'].unique()), default=sorted(df['musim'].unique()))
-hari_kerja_filter = st.sidebar.multiselect("Pilih Hari Kerja:", sorted(df['hari_kerja'].unique()), default=sorted(df['hari_kerja'].unique()))
-hari_libur_filter = st.sidebar.multiselect("Pilih Hari Libur:", sorted(df['hari_libur'].unique()), default=sorted(df['hari_libur'].unique()))
-kondisi_cuaca_filter = st.sidebar.multiselect("Pilih Kondisi Cuaca:", sorted(df['kondisi_cuaca'].unique()), default=sorted(df['kondisi_cuaca'].unique()))
-hari_minggu_filter = st.sidebar.multiselect("Pilih Hari Minggu:", sorted(df['hari_minggu'].unique()), default=sorted(df['hari_minggu'].unique()))
+tahun_filter = st.sidebar.multiselect("Pilih Tahun:", sorted(df['tahun'].unique()), default=sorted(df['tahun'].unique()), format_func=lambda x: tahun_map.get(x, str(x)))
+bulan_filter = st.sidebar.multiselect("Pilih Bulan:", sorted(df['bulan'].unique()), default=sorted(df['bulan'].unique()), format_func=lambda x: bulan_map.get(x, str(x)))
+musim_filter = st.sidebar.multiselect("Pilih Musim:", sorted(df['musim'].unique()), default=sorted(df['musim'].unique()), format_func=lambda x: musim_map.get(x, str(x)))
+hari_kerja_filter = st.sidebar.multiselect("Pilih Hari Kerja:", sorted(df['hari_kerja'].unique()), default=sorted(df['hari_kerja'].unique()), format_func=lambda x: hari_kerja_map.get(x, str(x)))
+hari_libur_filter = st.sidebar.multiselect("Pilih Hari Libur:", sorted(df['hari_libur'].unique()), default=sorted(df['hari_libur'].unique()), format_func=lambda x: hari_libur_map.get(x, str(x)))
+kondisi_cuaca_filter = st.sidebar.multiselect("Pilih Kondisi Cuaca:", sorted(df['kondisi_cuaca'].unique()), default=sorted(df['kondisi_cuaca'].unique()), format_func=lambda x: kondisi_cuaca_map.get(x, str(x)))
+hari_minggu_filter = st.sidebar.multiselect("Pilih Hari Minggu:", sorted(df['hari_minggu'].unique()), default=sorted(df['hari_minggu'].unique()), format_func=lambda x: hari_minggu_map.get(x, str(x)))
 
 # Filter DataFrame berdasarkan pilihan pengguna
 filtered_df = df[df['tahun'].isin(tahun_filter) &
