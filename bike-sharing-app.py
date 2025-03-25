@@ -26,20 +26,38 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-drive.mount('/content/drive')
+!pip install requests # Install the requests library
+
+import requests # Import the necessary library
+# Replace with the direct download link
+url = "https://drive.google.com/uc?export=download&id=1RaBmV6Q6FYWU4HWZs80Suqd7KQC34diQ"  
+zip_path = "Bike-sharing-dataset.zip"
+
+response = requests.get(url)
+with open(zip_path, "wb") as f:
+    f.write(response.content)
+
+extract_path = 'dataset'
+
+os.makedirs(extract_path, exist_ok=True) 
+
+with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    zip_ref.extractall(extract_path)
+
+extracted_files = os.listdir(extract_path)
+print("File dah diekstrak:", extracted_files)
+
+csv_path = os.path.join(extract_path, 'day.csv')
+df = pd.read_csv(csv_path) 
 
 zip_path = 'Bike-sharing-dataset.zip'
 extract_path = '/content/dataset'
-
 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
     zip_ref.extractall(extract_path)
 
     extract_path = '/content/dataset'
 extracted_files = os.listdir(extract_path)
 print("File dah diekstrak:", extracted_files)
-
-csv_path = os.path.join(extract_path, 'day.csv')
-df = pd.read_csv(csv_path)
 
 """## Data Wrangling
 
